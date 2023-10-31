@@ -5,12 +5,10 @@ name: CMake on multiple platforms
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - '.github/**'
   pull_request:
-    branches: [ "main" ]
-  workflow_run:
-    types: [requested]
-    workflows: [Build]
-
+    branches: [ "main" ]    
 
 jobs:
   build:
