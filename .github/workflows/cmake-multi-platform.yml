@@ -4,9 +4,7 @@ name: CMake on multiple platforms
 
 on:
   push:
-    branches: [ "main" ]
-    paths:
-      - '.github/**'
+    branches: [ "main", "**-cicd" ]
   pull_request:
     branches: [ "main" ]    
 
