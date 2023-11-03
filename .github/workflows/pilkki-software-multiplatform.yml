@@ -43,7 +43,7 @@ jobs:
 
     steps:
     - name: Install libudev
-      run: apt update -y && apt install -y libudev-dev
+      run: sudo apt-get install -y libudev-dev
       if: matrix.os == 'ubuntu-latest'
   
     - uses: actions/checkout@v3
