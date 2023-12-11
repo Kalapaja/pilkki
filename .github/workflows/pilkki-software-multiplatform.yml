@@ -59,7 +59,11 @@ jobs:
     - name: Install libudev
       run: sudo apt-get install -y libudev-dev
       if: matrix.os == 'ubuntu-latest'
-  
+
+    - name: Install macOS dependencies
+      run: brew install cmake ninja gcc
+      if: matrix.os == 'macos-latest'
+
     - uses: actions/checkout@v3
 
     - name: Set reusable strings
