@@ -85,21 +85,20 @@ jobs:
         -S ${{ steps.strings.outputs.build-source-dir }}
         if: matrix.os !== 'macos-latest'
 
-    # - name: Configure CMake for macOS
-    #   # Specific settings for macOS, if needed
-    #   run: >
-    #     cmake -B ${{ steps.strings.outputs.build-output-dir }}
-    #     -DCMAKE_CXX_STANDARD=17 # Ensure C++17 standard
-    #     -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
-    #     -G Ninja
-    #     -S ${{ steps.strings.outputs.build-source-dir }}
-    #   if: matrix.os == 'macos-latest'
+    - name: Configure CMake for macOS
+      # Specific settings for macOS, if needed
+      run: >
+        cmake -B ${{ steps.strings.outputs.build-output-dir }}
+        -DCMAKE_CXX_STANDARD=17 # Ensure C++17 standard
+        -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+        -G Ninja
+        -S ${{ steps.strings.outputs.build-source-dir }}
+      if: matrix.os == 'macos-latest'
       
     - name: Build
       # Build your program with the given configuration. Note that --config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
       run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }}
       if: matrix.os !== 'macos-latest'
-
 
     - name: Build for macOS
       run: ninja -C ${{ steps.strings.outputs.build-output-dir }}
