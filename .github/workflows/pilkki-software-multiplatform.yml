@@ -100,6 +100,7 @@ jobs:
       run: cmake --build ${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }}
       if: matrix.os !== 'macos-latest'
 
+
     - name: Build for macOS
       run: ninja -C ${{ steps.strings.outputs.build-output-dir }}
       if: matrix.os == 'macos-latest'
