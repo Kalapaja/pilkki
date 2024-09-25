@@ -7,7 +7,7 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "4.5.18", features = ["cargo"] }
-crc = "3.0.1"
+crc = "3.2.1"
 hex = "0.4.3"
 memmem = "0.1.1"
 serialport = { version = "4.5.1", default-features = false }
