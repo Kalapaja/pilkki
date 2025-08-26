@@ -8,7 +8,7 @@
     (title "SWD MCU Programmer Pilkki")
     (date "2023-07-18")
     (rev ".1A")
-    (company "Alzymologist Oy")
+    (company "Kalapaja Oy")
   )
 
   (lib_symbols
@@ -8193,3 +8193,4 @@
     (path "/" (page "1"))
   )
 )
+
